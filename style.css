@@ -10,28 +10,43 @@ body {
 #container {
     width: 20%;
     height: 50%;
-    border: 3px solid red;
+    border: 5px solid rgb(38, 70, 83);
+    border-radius: 5px;
     display: grid;
     grid-template-rows: 1.5fr, repeat(5, 1fr);
     grid-template-columns: repeat(4, 1fr);
+    background-color: rgb(42, 157, 143);
 }
 
 .buttons {
-    border: 1px solid green;
+    border: 5px solid rgb(42, 157, 143);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(244, 162, 97);
+    border-radius: 10px;
+}
+
+.nums {
+    background-color: rgb(233, 196, 106);
+    border: 5px solid rgb(42, 157, 143);
+}
+
+.operator {
+    background-color: rgb(231, 111, 81);
+    border: 5px solid rgb(42, 157, 143);
 }
 
 #display {
     margin: 5px;
-    border: 1px solid grey;
-    font-size: 50px;
+    font-size: 55px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
     grid-column-start: span 4;
     order: 0;
+    background-color: #ddd;
+    border-radius: 5px;
 }
 
 #button-0{
