@@ -76,7 +76,11 @@ const equals = document.querySelector("#equals");
 equals.addEventListener('click', () => {
     secondOperator = parseFloat(disp.textContent);
     rounded = round((operate(firstOperator, secondOperator, operator)))
-    disp.textContent = rounded.toString();
+    if (rounded.toString() === "NaN"){
+        
+    }
+    else{
+    disp.textContent = rounded.toString();}
 });
 
 //decimal
