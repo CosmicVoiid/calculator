@@ -50,7 +50,7 @@ let firstOperator;
 let secondOperator;
 let temp = "";
 let rounded = 0;
-
+let displayValue = "";
 
 //displays values
 function display(n){
@@ -61,6 +61,7 @@ function display(n){
     }
     if (disp.textContent.length <= 9){
         disp.textContent += n;
+        displayValue = disp.textContent;
     }
 }
 
@@ -74,13 +75,19 @@ all_clear.addEventListener('click', () =>{
 //evaluate
 const equals = document.querySelector("#equals");
 equals.addEventListener('click', () => {
-    secondOperator = parseFloat(disp.textContent);
-    rounded = round((operate(firstOperator, secondOperator, operator)))
-    if (rounded.toString() === "NaN"){
-        
+    if (operator !== "" && displayValue !== ""){
+        secondOperator = parseFloat(disp.textContent);
+        rounded = round((operate(firstOperator, secondOperator, operator)));
+        if (rounded.toString() === "NaN"){
+        }
+        if (rounded.toString() === "Infinity"){
+            disp.textContent = "ERROR";
+        }
+        else{
+        disp.textContent = rounded.toString();}
+    operator = "";
+    displayValue = "";
     }
-    else{
-    disp.textContent = rounded.toString();}
 });
 
 //decimal
@@ -105,6 +112,7 @@ add.addEventListener('click', () => {
     firstOperator = parseFloat(disp.textContent);
     operator = "plus";
     temp = disp.textContent;
+    displayValue = "";
 });
 
 //subtract
@@ -113,6 +121,7 @@ subtracter.addEventListener('click', () => {
     firstOperator = parseFloat(disp.textContent);
     operator = "subtract";
     temp = disp.textContent;
+    displayValue = "";
 });
 
 //multiply
@@ -121,6 +130,7 @@ multiplyer.addEventListener('click', () => {
     firstOperator = parseFloat(disp.textContent);
     operator = "multiply";
     temp = disp.textContent;
+    displayValue = "";
 });
 
 //divide
@@ -129,6 +139,7 @@ divider.addEventListener('click', () => {
     firstOperator = parseFloat(disp.textContent);
     operator = "divide";
     temp = disp.textContent;
+    displayValue = "";
 });
 
 //number inputs
